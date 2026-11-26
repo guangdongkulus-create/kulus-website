@@ -1,0 +1,470 @@
+
+---
+const images = [
+  {
+    src: "/images/factory-sewing-line.jpg",
+    title: "Sewing & Production",
+    description: "Production coordination with our manufacturing partners."
+  },
+  {
+    src: "/images/factory-workshop.jpg",
+    title: "Manufacturing Workshop",
+    description: "A look inside the workshops supporting our production projects."
+  },
+  {
+    src: "/images/factory-production-scenes.jpg",
+    title: "Production Process",
+    description: "Working with manufacturing partners to coordinate custom orders."
+  }
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Share Your Requirements",
+    description: "Tell us about your product, quantity, fabrics, colors, designs and intended use."
+  },
+  {
+    number: "02",
+    title: "Confirm Specifications",
+    description: "We discuss product details, customization options and project requirements with you."
+  },
+  {
+    number: "03",
+    title: "Sample & Production Planning",
+    description: "Where applicable, sample details and production arrangements are discussed before moving forward."
+  },
+  {
+    number: "04",
+    title: "Production Coordination",
+    description: "We coordinate the order with our manufacturing partners according to the confirmed requirements."
+  },
+  {
+    number: "05",
+    title: "Inspection & Delivery Coordination",
+    description: "We coordinate pre-shipment checks and delivery arrangements for your order."
+  }
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how KULUS coordinates custom teamwear and apparel manufacturing projects with manufacturing partners." />
+  <title>Manufacturing | KULUS Custom Teamwear</title>
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo" href="/">
+      <span class="logo-main">KULUS</span>
+      <span class="logo-sub">CUSTOM TEAMWEAR</span>
+    </a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/about">About Us</a>
+      <a class="active" href="/manufacturing">Manufacturing</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">OUR MANUFACTURING PARTNERS</p>
+        <h1>From Your Ideas<br />to Custom Apparel</h1>
+        <p class="hero-text">
+          We coordinate with manufacturing partners to support custom teamwear,
+          uniforms and apparel projects — from product discussions to production
+          and delivery coordination.
+        </p>
+        <a class="button" href="/#contact">DISCUSS YOUR PROJECT</a>
+      </div>
+    </section>
+
+    <section class="intro section">
+      <p class="eyebrow">HOW WE WORK</p>
+      <h2>Manufacturing Support for Custom Orders</h2>
+      <p class="intro-text">
+        Every project starts with understanding your requirements. KULUS works
+        with manufacturing partners to discuss product specifications,
+        customization details and production arrangements for each order.
+      </p>
+    </section>
+
+    <section class="gallery section">
+      <div class="section-heading">
+        <p class="eyebrow">PRODUCTION ENVIRONMENT</p>
+        <h2>Our Manufacturing Partners</h2>
+        <p>
+          Explore scenes from the manufacturing facilities that support our
+          custom apparel projects.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        {images.map((item) => (
+          <article class="gallery-card">
+            <img src={item.src} alt={item.title} />
+            <div class="gallery-caption">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p class="photo-note">
+        Manufacturing images shown are from partner facilities.
+      </p>
+    </section>
+
+    <section class="process section">
+      <div class="section-heading">
+        <p class="eyebrow">OUR WORKFLOW</p>
+        <h2>How a Custom Order Moves Forward</h2>
+        <p>
+          A clear process helps us understand your needs and coordinate each
+          stage of your project.
+        </p>
+      </div>
+
+      <div class="steps">
+        {steps.map((step) => (
+          <article class="step">
+            <span class="step-number">{step.number}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="support section">
+      <div>
+        <p class="eyebrow">OEM & ODM PROJECTS</p>
+        <h2>Let's Build Your Custom Apparel Project</h2>
+        <p>
+          Whether you have a finished design or are still exploring ideas,
+          share your requirements with us. We can discuss suitable product
+          options, customization details and the next steps for your project.
+        </p>
+        <a class="button" href="/#contact">CONTACT KULUS</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-logo" href="/">KULUS</a>
+    <p>Custom Teamwear · Apparel · OEM & ODM</p>
+    <p class="copyright">© {new Date().getFullYear()} KULUS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    margin: 0;
+    color: #202d3a;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+  }
+
+  :global(a) {
+    text-decoration: none;
+  }
+
+  .header {
+    min-height: 82px;
+    padding: 16px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    color: #17324b;
+  }
+
+  .logo-main {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+
+  .logo-sub {
+    margin-top: 3px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  nav a {
+    color: #4b5965;
+    font-size: 13px;
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: #1c628c;
+  }
+
+  .hero {
+    min-height: 510px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    color: white;
+    background:
+      linear-gradient(90deg, rgba(13, 35, 54, .88), rgba(13, 35, 54, .28)),
+      url("/images/factory-workshop.jpg") center/cover no-repeat;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .eyebrow {
+    color: #6c9dbd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+  }
+
+  .hero .eyebrow {
+    color: #b6d5e9;
+  }
+
+  h1 {
+    margin: 20px 0;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.12;
+  }
+
+  .hero-text {
+    max-width: 570px;
+    color: #e2eaf0;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 15px 25px;
+    color: white;
+    background: #24678f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    transition: background .2s;
+  }
+
+  .button:hover {
+    background: #174966;
+  }
+
+  .section {
+    padding: 85px 9%;
+  }
+
+  .intro {
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 14px 0 20px;
+    color: #1b3449;
+    font-size: clamp(28px, 4vw, 40px);
+  }
+
+  .intro-text {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #687580;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .gallery {
+    background: #f3f6f8;
+  }
+
+  .section-heading {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .section-heading > p:last-child {
+    color: #71808c;
+    line-height: 1.8;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .gallery-card {
+    overflow: hidden;
+    background: white;
+  }
+
+  .gallery-card img {
+    display: block;
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+  }
+
+  .gallery-caption {
+    padding: 22px;
+  }
+
+  .gallery-caption h3 {
+    margin: 0 0 10px;
+    color: #20394d;
+    font-size: 17px;
+  }
+
+  .gallery-caption p,
+  .step p {
+    margin: 0;
+    color: #73808a;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .photo-note {
+    margin-top: 22px;
+    color: #89939b;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .steps {
+    max-width: 850px;
+    margin: auto;
+  }
+
+  .step {
+    display: flex;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid #e5eaee;
+  }
+
+  .step-number {
+    flex: 0 0 48px;
+    color: #4b88ad;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .step h3 {
+    margin: 2px 0 10px;
+    color: #243c50;
+    font-size: 18px;
+  }
+
+  .support {
+    color: white;
+    text-align: center;
+    background: #17364f;
+  }
+
+  .support > div {
+    max-width: 720px;
+    margin: auto;
+  }
+
+  .support h2 {
+    color: white;
+  }
+
+  .support p:not(.eyebrow) {
+    color: #d0dce5;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  footer {
+    padding: 38px 20px;
+    color: #c5d0d9;
+    text-align: center;
+    background: #102638;
+    font-size: 12px;
+  }
+
+  .footer-logo {
+    color: white;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+
+  .copyright {
+    margin-top: 22px;
+    color: #8fa0ad;
+    font-size: 11px;
+  }
+
+  @media (max-width: 760px) {
+    .header {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 18px 6%;
+    }
+
+    nav {
+      gap: 14px;
+    }
+
+    nav a {
+      font-size: 12px;
+    }
+
+    .hero {
+      min-height: 440px;
+      padding: 65px 7%;
+    }
+
+    .section {
+      padding: 60px 7%;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-card img {
+      height: 230px;
+    }
+
+    .step {
+      gap: 15px;
+    }
+  }
+</style>

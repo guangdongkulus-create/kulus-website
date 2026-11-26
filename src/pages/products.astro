@@ -1,0 +1,408 @@
+
+---
+const products = [
+  {
+    number: "01",
+    name: "Custom T-Shirts",
+    category: "EVERYDAY TEAMWEAR",
+    description: "Custom T-shirts for teams, businesses, events and brands. Choose your preferred colors, fabrics, printing and logo details.",
+    image: "/images/tshirts-colors.jpg",
+    details: ["Custom colors and fabrics", "Logo printing", "Custom labels", "OEM and ODM"]
+  },
+  {
+    number: "02",
+    name: "Custom Polo Shirts",
+    category: "BUSINESS & TEAM POLOS",
+    description: "Custom polo shirts for companies, organizations, teams and brands, with flexible design and customization options.",
+    image: "/images/polo-colors.jpg",
+    details: ["Custom colors", "Logo embroidery or printing", "Fabric options", "Custom branding"]
+  },
+  {
+    number: "03",
+    name: "Hoodies & Sweatshirts",
+    category: "CASUAL TEAMWEAR",
+    description: "Custom hoodies and sweatshirts for teams, communities, businesses and clothing brands.",
+    image: "/images/hoodies-colors.jpg",
+    details: ["Custom colors", "Fabric selection", "Printing and embroidery", "Custom labels"]
+  },
+  {
+    number: "04",
+    name: "Sports Teamwear & Jerseys",
+    category: "SPORTS & CLUBS",
+    description: "Customized teamwear and jerseys for sports clubs, teams and organizations.",
+    image: "/images/polo-green.jpg",
+    details: ["Custom team colors", "Team logos and numbers", "Custom designs", "OEM and ODM"]
+  },
+  {
+    number: "05",
+    name: "Workwear & Uniforms",
+    category: "BUSINESS UNIFORMS",
+    description: "Custom workwear and uniforms for businesses and professional teams.",
+    image: "/images/factory-sewing-line.jpg",
+    details: ["Custom uniform designs", "Company branding", "Fabric options", "Custom sizing"]
+  },
+  {
+    number: "06",
+    name: "Jackets & Vests",
+    category: "OUTERWEAR",
+    description: "Customized jackets and vests for teams, companies and organizations.",
+    image: "/images/hoodies-gray.jpg",
+    details: ["Custom colors", "Logo application", "Fabric options", "Custom details"]
+  },
+  {
+    number: "07",
+    name: "Team Accessories",
+    category: "ACCESSORIES",
+    description: "Custom scarves, caps and accessories to complete your team's identity.",
+    image: "/images/fabric-details.jpg",
+    details: ["Custom colors", "Logo application", "Custom designs", "Team branding"]
+  }
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore KULUS custom T-shirts, polo shirts, hoodies, sports teamwear, workwear, jackets and team accessories." />
+  <title>Products | KULUS Custom Teamwear</title>
+</head>
+
+<body>
+  <header class="header">
+    <a class="brand" href="/">
+      <span class="brand-name">KULUS</span>
+      <span class="brand-sub">CUSTOM TEAMWEAR</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/#about">About Us</a>
+      <a href="/#manufacturing">Manufacturing</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <a class="header-button" href="/#contact">GET IN TOUCH ↗</a>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">KULUS · CUSTOM APPAREL SOLUTIONS</p>
+      <h1>PRODUCTS<br /><span>MADE FOR YOUR TEAM.</span></h1>
+      <p>
+        Explore our custom apparel categories. From everyday teamwear
+        to business uniforms, bring your ideas to life with KULUS.
+      </p>
+    </section>
+
+    <section class="catalog">
+      <div class="catalog-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Explore Our Products</h2>
+        </div>
+        <p>Custom apparel solutions for teams, businesses and brands.</p>
+      </div>
+
+      <div class="product-grid">
+        {products.map((product) => (
+          <article class="product-card">
+            <div class="image-wrap">
+              <img src={product.image} alt={product.name} loading="lazy" />
+              <span>{product.number}</span>
+            </div>
+            <div class="product-content">
+              <p class="category">{product.category}</p>
+              <h3>{product.name}</h3>
+              <p class="description">{product.description}</p>
+              <ul>
+                {product.details.map((detail) => <li>{detail}</li>)}
+              </ul>
+              <a href="/#contact">ASK ABOUT THIS PRODUCT ↗</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="inquiry">
+      <p class="eyebrow">HAVE A CUSTOM PROJECT?</p>
+      <h2>LET'S CREATE<br />YOUR TEAM IDENTITY.</h2>
+      <p>Tell us what you need. Our team is ready to discuss your project.</p>
+      <a href="https://wa.me/8613925478127" target="_blank" rel="noopener noreferrer">
+        CHAT WITH KULUS ON WHATSAPP ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>KULUS</strong>
+      <p>CUSTOM TEAMWEAR · OEM · ODM</p>
+      <p>A KULUS BRAND · 衫匠</p>
+    </div>
+    <a href="/">BACK TO HOME ↑</a>
+  </footer>
+</body>
+</html>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --navy: #10283c;
+  --blue: #24465f;
+  --light: #f3f5f6;
+  --muted: #71808b;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: #263746;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.header {
+  min-height: 88px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: white;
+}
+
+.brand { display: flex; flex-direction: column; }
+
+.brand-name {
+  color: var(--navy);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.brand-sub {
+  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+nav { display: flex; gap: 28px; }
+
+nav a {
+  font-size: 12px;
+  color: #425260;
+}
+
+.header-button {
+  background: var(--navy);
+  color: white;
+  padding: 15px 22px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.page-hero {
+  padding: 100px 10%;
+  color: white;
+  background: linear-gradient(110deg, #10283c, #35556b);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #8ba3b5;
+}
+
+.page-hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.08;
+  margin: 25px 0;
+  letter-spacing: -2px;
+}
+
+.page-hero h1 span { color: #b5c8d5; }
+
+.page-hero > p:last-child {
+  max-width: 570px;
+  color: #d4dfe6;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.catalog {
+  padding: 85px 10%;
+  background: var(--light);
+}
+
+.catalog-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.catalog-heading h2 {
+  color: var(--navy);
+  font-size: 38px;
+  margin: 12px 0 0;
+}
+
+.catalog-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+
+.product-card {
+  background: white;
+  min-width: 0;
+}
+
+.image-wrap {
+  height: 245px;
+  position: relative;
+  background: #e5eaed;
+  overflow: hidden;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.product-card:hover img { transform: scale(1.04); }
+
+.image-wrap span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 8px 11px;
+  background: white;
+  color: var(--navy);
+  font-size: 10px;
+}
+
+.product-content { padding: 24px; }
+
+.category {
+  color: #8a9aa6;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.product-content h3 {
+  color: var(--navy);
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.description {
+  min-height: 78px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.product-content ul {
+  padding-left: 17px;
+  color: #536571;
+  font-size: 11px;
+  line-height: 2;
+  margin: 20px 0;
+}
+
+.product-content > a {
+  display: inline-block;
+  border-bottom: 1px solid #8297a7;
+  padding-bottom: 8px;
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.inquiry {
+  padding: 95px 20px;
+  text-align: center;
+  color: white;
+  background: var(--navy);
+}
+
+.inquiry h2 {
+  font-size: clamp(40px, 6vw, 65px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.inquiry > p:not(.eyebrow) {
+  color: #c3d0d9;
+  font-size: 13px;
+}
+
+.inquiry > a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 17px 25px;
+  background: white;
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+footer {
+  padding: 40px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: #0a1d2c;
+  color: white;
+}
+
+footer strong {
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+footer p {
+  font-size: 9px;
+  color: #a3b2bd;
+  letter-spacing: 1px;
+}
+
+footer a {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 850px) {
+  .header { flex-wrap: wrap; padding: 18px 6%; }
+  nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+  nav a { font-size: 10px; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalog-heading { align-items: start; flex-direction: column; }
+}
+
+@media (max-width: 520px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .page-hero, .catalog { padding: 65px 7%; }
+  .image-wrap { height: 280px; }
+  footer { align-items: flex-start; flex-direction: column; }
+}
+</style>
