@@ -1,8 +1,8 @@
-menswear-website
-├── public
-├── src
-├── node_modules
-├── package.json
-├── package-lock.json
-├── wrangler.jsonc  ← 新文件
-└── .gitignore
+{
+  "name": "kulus-website",
+  "compatibility_date": "2026-11-26",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
